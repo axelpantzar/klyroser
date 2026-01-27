@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Klyro - Vi skapar stark digital närvaro genom stilren design och innovativa digitala lösningar. Hemsidor, digital marknadsföring och SEO.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <!-- Favicon (GitHub Pages-säker lösning) -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png?v=5">
+    <link rel="apple-touch-icon" href="favicon.png">
 
     <title>Klyro - Digital närvaro som gör skillnad</title>
 
@@ -18,12 +19,15 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #0a0a0a;
             color: #fff;
             overflow-x: hidden;
-            position: relative;
         }
 
         body::before {
@@ -38,27 +42,10 @@
             z-index: 0;
         }
 
-        body::after {
-            content: '';
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background:
-                linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.01) 50%, transparent 70%),
-                repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,255,255,0.01) 50px, rgba(255,255,255,0.01) 51px);
-            animation: abstractMove 20s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
+        section {
+            position: relative;
+            z-index: 1;
         }
-
-        @keyframes abstractMove {
-            0%,100% { transform: translate(0,0) rotate(0deg); }
-            50% { transform: translate(-5%,-5%) rotate(5deg); }
-        }
-
-        section { position: relative; z-index: 1; }
 
         nav {
             position: fixed;
@@ -68,12 +55,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
             backdrop-filter: blur(10px);
+            z-index: 1000;
             transition: transform 0.3s ease;
         }
 
-        nav.hidden { transform: translateY(-100%); }
+        nav.hidden {
+            transform: translateY(-100%);
+        }
 
         .logo img {
             height: 40px;
@@ -96,20 +85,20 @@
 
         .hero {
             height: 100vh;
+            padding: 8rem 2rem 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 8rem 2rem 2rem;
         }
 
         .hero h1 {
-            font-size: clamp(3rem,10vw,8rem);
+            font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 2rem;
             text-transform: uppercase;
+            margin-bottom: 2rem;
         }
 
         .hero p {
@@ -119,7 +108,7 @@
             margin-bottom: 3rem;
         }
 
-        .typewriter-container {
+        .typewriter {
             font-size: 1.4rem;
             margin-bottom: 3rem;
         }
@@ -129,6 +118,7 @@
             width: 2px;
             height: 1.2em;
             background: #fff;
+            margin-left: 4px;
             animation: blink 0.7s infinite;
         }
 
@@ -162,14 +152,14 @@
         }
 
         .section-title {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 4rem;
             text-transform: uppercase;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
         }
 
@@ -186,6 +176,17 @@
             transform: translateY(-10px);
         }
 
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            color: #999;
+            line-height: 1.6;
+        }
+
         footer {
             padding: 3rem;
             border-top: 1px solid #333;
@@ -193,7 +194,15 @@
             color: #666;
         }
 
-        html { scroll-behavior: smooth; }
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .services {
+                padding: 4rem 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -209,26 +218,31 @@
 <section class="hero">
     <h1>Digital byrå<br>för moderna<br>varumärken</h1>
     <p>Vi skapar stark digital närvaro genom stilren design och smarta digitala lösningar.</p>
-    <div class="typewriter-container">
+
+    <div class="typewriter">
         Vi hjälper <span id="typed-text">tech-startups</span><span class="cursor"></span>
     </div>
+
     <a href="#tjanster" class="scroll-arrow"></a>
 </section>
 
 <section id="tjanster" class="services">
     <h2 class="section-title">Vad vi gör</h2>
+
     <div class="services-grid">
         <div class="service-card">
             <h3>Hemsidor</h3>
-            <p>Snabba, moderna och konverterande hemsidor.</p>
+            <p>Moderna, snabba och responsiva hemsidor som konverterar.</p>
         </div>
+
         <div class="service-card">
-            <h3>Marknadsföring</h3>
-            <p>Rätt budskap till rätt målgrupp.</p>
+            <h3>Digital marknadsföring</h3>
+            <p>Strategisk marknadsföring som når rätt målgrupp.</p>
         </div>
+
         <div class="service-card">
             <h3>SEO</h3>
-            <p>Bli synlig där kunderna söker.</p>
+            <p>Syns där kunderna söker och driver organisk trafik.</p>
         </div>
     </div>
 </section>
@@ -250,25 +264,51 @@
         "nystartade företag",
         "e-handelsföretag",
         "lokala företag",
-        "tech-startups"
+        "tech-startups",
+        "konsultbolag"
     ];
 
-    let i = 0;
-    let j = 0;
-    let del = false;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
     const el = document.getElementById("typed-text");
 
     function type() {
-        el.textContent = words[i].slice(0, j);
-        if (!del) j++; else j--;
-        if (j === words[i].length) del = true;
-        if (j === 0 && del) {
-            del = false;
-            i = (i + 1) % words.length;
+        const word = words[wordIndex];
+        el.textContent = word.substring(0, charIndex);
+
+        if (!deleting) {
+            charIndex++;
+            if (charIndex === word.length + 1) {
+                deleting = true;
+                setTimeout(type, 1500);
+                return;
+            }
+        } else {
+            charIndex--;
+            if (charIndex === 0) {
+                deleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
         }
-        setTimeout(type, del ? 60 : 100);
+
+        setTimeout(type, deleting ? 60 : 100);
     }
-    type();
+
+    setTimeout(type, 1000);
+
+    let lastScroll = 0;
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", () => {
+        const current = window.scrollY;
+        if (current > lastScroll && current > 100) {
+            nav.classList.add("hidden");
+        } else {
+            nav.classList.remove("hidden");
+        }
+        lastScroll = current;
+    });
 </script>
 
 </body>
