@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://klyrodigital.wasmer.app/ -->
+<html lang="sv"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Klyro - Vi skapar stark digital närvaro genom stilren design och innovativa digitala lösningar. Hemsidor, digital marknadsföring och SEO.">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABnklEQVR4nO2WsU7DMBCG/yRASAwMSEiMDIgFHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJ/wDZXmVhEd8AAAAASUVORK5CYII=">
+    <title>Klyro - Digital närvaro som gör skillnad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Abstract background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.01) 50%, transparent 70%),
+                repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255, 255, 255, 0.01) 50px, rgba(255, 255, 255, 0.01) 51px);
+            animation: abstractMove 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes abstractMove {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(-5%, -5%) rotate(5deg);
+            }
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        nav.hidden {
+            transform: translateY(-100%);
+        }
+
+        .logo {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            padding-top: 8rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 1s ease;
+            text-transform: uppercase;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: #999;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .typewriter-container {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: #fff;
+            margin-bottom: 3rem;
+            min-height: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .typewriter-text {
+            font-weight: 500;
+        }
+
+        .typewriter-text .typed-text {
+            color: #fff;
+        }
+
+        .typewriter-text .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: #fff;
+            margin-left: 2px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+
+        .scroll-arrow {
+            display: inline-block;
+            width: 2px;
+            height: 60px;
+            background: #fff;
+            position: relative;
+            animation: fadeInUp 1s ease 0.4s both, arrowBounce 2s ease-in-out 2s infinite;
+            margin-top: 2rem;
+        }
+
+        .scroll-arrow::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #fff;
+        }
+
+        @keyframes arrowBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(15px);
+            }
+        }
+
+        .scroll-arrow:hover {
+            opacity: 0.7;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            padding: 3rem 2rem;
+            border: 1px solid #333;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            border-color: #fff;
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            color: #999;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Ticker Section */
+        .ticker-section {
+            padding: 6rem 0;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .ticker-title {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .ticker {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .ticker-content {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            gap: 6rem;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-item {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        .ticker-item:hover {
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .contact p {
+            font-size: 1.3rem;
+            color: #999;
+            margin-bottom: 3rem;
+        }
+
+        .contact-email {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 2px solid #fff;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .contact-email:hover {
+            letter-spacing: 0.05em;
+            transform: translateY(-2px);
+        }
+
+        .social-link {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 5rem;
+            color: #999;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #fff;
+        }
+
+        .social-link svg {
+            width: 28px;
+            height: 28px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .services, .contact {
+                padding: 4rem 2rem;
+            }
+
+            .services-grid {
+                gap: 2rem;
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .ticker-item {
+                font-size: 1.5rem;
+            }
+
+            .nav-link {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                height: 35px;
+            }
+
+            .logo img {
+                height: 100%;
+                width: auto;
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services, .contact {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .ticker-item {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .services-grid .service-card:nth-child(1) {
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        .services-grid .service-card:nth-child(2) {
+            animation: slideInLeft 0.6s ease 0.1s forwards;
+        }
+
+        .services-grid .service-card:nth-child(3) {
+            animation: slideInLeft 0.6s ease 0.2s forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 400 150&#39;%3E%3Ctext x=&#39;10&#39; y=&#39;120&#39; font-family=&#39;Arial, sans-serif&#39; font-size=&#39;140&#39; font-weight=&#39;bold&#39; fill=&#39;white&#39; letter-spacing=&#39;-5&#39;%3Eklyro%3C/text%3E%3C/svg%3E" alt="Klyro">
+        </div>
+        <a href="https://klyrodigital.wasmer.app/#kontakt" class="nav-link">Kontakta oss</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Digital byrå<br>för moderna<br>varumärken</h1>
+        <p>Vi skapar stark digital närvaro genom stilren design och innovativa digitala lösningar som driver resultat.</p>
+        <div class="typewriter-container">
+            <div class="typewriter-text">
+                Vi hjälper <span class="typed-text" id="typed-text">tech-startups</span><span class="cursor"></span>
+            </div>
+        </div>
+        <a href="https://klyrodigital.wasmer.app/#tjanster" class="scroll-arrow"></a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="tjanster" class="services">
+        <h2 class="section-title">Vad vi gör</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Hemsidor</h3>
+                <p>Vi bygger moderna, responsiva hemsidor som konverterar besökare till kunder. Snabb, användarvänlig och optimerad för alla enheter.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital marknadsföring</h3>
+                <p>Strategisk marknadsföring som når rätt målgrupp. Vi skapar kampanjer som engagerar och driver resultat.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO</h3>
+                <p>Optimering som får er att synas. Vi hjälper er att ranka högre och nå fler potentiella kunder organiskt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticker Section -->
+    <section class="ticker-section">
+        <div class="ticker-title">Kunder vi arbetat med</div>
+        <div class="ticker">
+            <div class="ticker-content">
+                <div class="ticker-item">ÖREBRO INNEBANDY</div>
+                <div class="ticker-item">EXCELLENT FLOORBALL</div>
+                <div class="ticker-item">JAS ELIT CUP</div>
+                <div class="ticker-item">AIF-CUPEN</div>
+                <!-- Duplicerade för seamless loop -->
+                <div class="ticker-item">ÖREBRO INNEBANDY</div>
+                <div class="ticker-item">EXCELLENT FLOORBALL</div>
+                <div class="ticker-item">JAS ELIT CUP</div>
+                <div class="ticker-item">AIF-CUPEN</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="contact">
+        <h2>Låt oss<br>skapa något<br>tillsammans</h2>
+        <p>Redo att ta nästa steg?</p>
+        <a href="mailto:axel.pantzar@gail.com" class="contact-email">hej@klyrodigital.se</a>
+        <br>
+        <a href="https://www.instagram.com/klyrodigital.se/" target="_blank" rel="noopener noreferrer" class="social-link">
+            Följ oss på Instagram
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <div style="height: 2rem;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year">2026</span> Klyro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auto update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Typewriter effect
+        const companies = [
+            'nystartade företag',
+            'e-handelsföretag',
+            'lokala företag',
+            'tech-startups',
+            'restauranger',
+            'konsultföretag',
+            'detaljhandeln'
+        ];
+        
+        let companyIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typedTextElement = document.getElementById('typed-text');
+        
+        function typeWriter() {
+            const currentCompany = companies[companyIndex];
+            
+            if (isDeleting) {
+                typedTextElement.textContent = currentCompany.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentCompany.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentCompany.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                companyIndex = (companyIndex + 1) % companies.length;
+                typeSpeed = 500; // Pause before next word
+            }
+            
+            setTimeout(typeWriter, typeSpeed);
+        }
+        
+        // Start typewriter after a short delay
+        setTimeout(typeWriter, 1500);
+
+        // Hide/show navigation on scroll
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+        let scrollTimeout;
+
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimeout);
+            
+            scrollTimeout = setTimeout(function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    nav.classList.add('hidden');
+                } else {
+                    // Scrolling up
+                    nav.classList.remove('hidden');
+                }
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, 10);
+        }, false);
+    </script>
+
+
+</body></html>
