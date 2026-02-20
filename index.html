@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Klyro - Vi skapar stark digital närvaro genom stilren design och innovativa digitala lösningar. Hemsidor, digital marknadsföring och SEO.">
+    <meta name="description"
+        content="Klyro - Vi skapar stark digital närvaro genom stilren design och innovativa digitala lösningar. Hemsidor, digital marknadsföring och SEO.">
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABnklEQVR4nO2WsU7DMBCG/yRASAwMSEiMDIgFHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJ/wDZXmVhEd8AAAAASUVORK5CYII=">
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABnklEQVR4nO2WsU7DMBCG/yRASAwMSEiMDIgFHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJB2DiAZh4ACYegIkHYOIBmHgAJh6AiQdg4gGYeAAmHoCJ/wDZXmVhEd8AAAAASUVORK5CYII=">
 
     <title>Klyro - Digital närvaro som gör skillnad</title>
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Grundinställningar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -21,7 +28,59 @@
             position: relative;
         }
 
-        /* Navigation (återställd) */
+        /* Bakgrund */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.01) 50%, transparent 70%),
+                repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(255, 255, 255, 0.01) 50px,
+                    rgba(255, 255, 255, 0.01) 51px);
+            animation: abstractMove 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes abstractMove {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-5%, -5%) rotate(5deg);
+            }
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -36,16 +95,24 @@
             transition: transform 0.3s ease;
         }
 
-        nav.hidden { transform: translateY(-100%); }
+        nav.hidden {
+            transform: translateY(-100%);
+        }
 
         .logo {
             height: 40px;
             transition: transform 0.3s ease;
         }
 
-        .logo:hover { transform: scale(1.05); }
+        .logo:hover {
+            transform: scale(1.05);
+        }
 
-        .logo img { height: 100%; display: block; }
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
 
         .nav-link {
             color: #fff;
@@ -61,23 +128,39 @@
             color: #000;
         }
 
-        /* Hero */
+        /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 2rem;
-            padding-top: 10rem;
+            padding-top: 8rem;
+            position: relative;
         }
 
         .hero h1 {
             font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 700;
             line-height: 1.1;
             margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 1s ease;
             text-transform: uppercase;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero p {
@@ -86,167 +169,18 @@
             max-width: 600px;
             margin-bottom: 3rem;
             line-height: 1.6;
+            animation: fadeInUp 1s ease 0.2s both;
         }
 
-        /* Services */
-        .services {
-            padding: 8rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 4rem;
-            text-transform: uppercase;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .service-card {
-            padding: 3rem 2rem;
-            border: 1px solid #333;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.02);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            border-color: #fff;
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.05);
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .service-card p {
-            color: #999;
-            line-height: 1.8;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 8rem 4rem;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: clamp(2.5rem,6vw,5rem);
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-
-        .contact-email {
-            font-size: clamp(1.5rem,3vw,2.5rem);
+        .typewriter-container {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
             color: #fff;
-            text-decoration: none;
-            border-bottom: 2px solid #fff;
+            margin-bottom: 3rem;
         }
-
-        footer {
-            padding: 3rem;
-            border-top: 1px solid #333;
-            text-align: center;
-            color: #666;
-        }
-
-        /* Mobiljusteringar */
-        @media (max-width: 768px) {
-
-            nav { padding: 1.5rem 2rem; }
-
-            .hero {
-                padding-top: 8rem;
-                min-height: 85vh; /* minskar avstånd */
-            }
-
-            .services {
-                padding: 3rem 2rem; /* mindre luft mellan hero och sektionen */
-            }
-
-            .section-title {
-                margin-bottom: 2rem;
-            }
-
-            .services-grid {
-                gap: 2rem;
-            }
-        }
-
-        html { scroll-behavior: smooth; }
     </style>
 </head>
 
 <body>
-
-<nav>
-    <div class="logo">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150'%3E%3Ctext x='10' y='120' font-family='Arial' font-size='140' font-weight='bold' fill='white'%3EKlyro%3C/text%3E%3C/svg%3E" alt="Klyro">
-    </div>
-    <a href="#kontakt" class="nav-link">Kontakta oss</a>
-</nav>
-
-<section class="hero">
-    <h1>Digital byrå<br>för moderna<br>varumärken</h1>
-    <p>Vi skapar stark digital närvaro genom stilren design och innovativa digitala lösningar som driver resultat.</p>
-</section>
-
-<section id="tjanster" class="services">
-    <h2 class="section-title">Vad vi gör</h2>
-
-    <div class="services-grid">
-        <div class="service-card">
-            <h3>Hemsidor</h3>
-            <p>Vi bygger moderna, responsiva hemsidor som konverterar besökare till kunder.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Digital marknadsföring</h3>
-            <p>Strategisk marknadsföring som når rätt målgrupp och driver resultat.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>SEO</h3>
-            <p>Optimering som får er att synas och nå fler kunder organiskt.</p>
-        </div>
-    </div>
-</section>
-
-<section id="kontakt" class="contact">
-    <h2>Låt oss<br>skapa något<br>tillsammans</h2>
-    <a href="mailto:hej@klyrodigital.se" class="contact-email">hej@klyrodigital.se</a>
-</section>
-
-<footer>
-    © <span id="year"></span> Klyro. All rights reserved.
-</footer>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-let lastScrollTop = 0;
-const nav = document.querySelector('nav');
-
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        nav.classList.add('hidden');
-    } else {
-        nav.classList.remove('hidden');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-</script>
-
 </body>
+
 </html>
